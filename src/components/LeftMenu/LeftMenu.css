@@ -1,0 +1,29 @@
+.leftMenu {
+    width: 100px;
+    height: 1002px;
+    background: rgb(0, 0, 0, 1);
+    /* background: rgb(235, 6, 6); */
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 100px;
+    height: 100vh;
+}
+
+.leftMenu-elem {
+    cursor: pointer;
+    margin-bottom: 30px;
+    color: #606060;
+}
+
+.leftMenu-elem-active {
+    color: #FFFFFF;
+}
+
+.leftMenu-elem:hover {
+    color: #FFFFFF;
+}

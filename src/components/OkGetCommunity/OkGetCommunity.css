@@ -1,0 +1,40 @@
+.okGetCommunity {
+    width: 100%;
+}
+
+.okGetCommunity_inputs {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+.okGetCommunity_inputs-input {
+    background: #BFBFBF;
+    color: #989898;
+    height: 50px;
+    width: 100%;
+    padding: 0 0 0 20px;
+    color: #FFFFFFFF;
+}
+
+.okGetCommunity_filters {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 200px 200px 200px 200px ;
+    grid-template-rows: 30px 30px 30px ;
+    margin-bottom: 10px;
+}
+
+
+.okGetCommunity_btns {
+    display: flex;
+    justify-content: end;
+    width: 100%;
+
+}
+.okGetCommunity_btns-btn:nth-last-child(1) {
+    margin-right: 0;
+}
+.okGetCommunity_btns-btn {
+    margin-right: 10px;
+}

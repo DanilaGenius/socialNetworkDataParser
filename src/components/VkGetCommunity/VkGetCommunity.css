@@ -1,0 +1,46 @@
+.vkGetCommunity {
+    width: 100%;
+    
+}
+
+.vkGetCommunity_inputs {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+.vkGetCommunity_inputs-input {
+    background: #BFBFBF;
+    color: #989898;
+    height: 50px;
+    width: 100%;
+    padding: 0 0 0 20px;
+    color: #FFFFFFFF;
+}
+
+.vkGetCommunity_filters {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 200px 200px 200px 200px ;
+    grid-template-rows: 30px 30px 30px ;
+    margin-bottom: 10px;
+}
+
+
+.vkGetCommunity_btns {
+    display: flex;
+    justify-content: end;
+    width: 100%;
+
+}
+.vkGetCommunity_btns-btn:nth-last-child(1) {
+    margin-right: 0;
+}
+.vkGetCommunity_btns-btn {
+    margin-right: 10px;
+}
+
+
+
+
+  

@@ -1,0 +1,60 @@
+.mainOptions {
+    
+}
+
+.mainOptions_block {
+    margin-bottom: 50px;
+}
+.mainOptions_title {
+    font-size: 24px;
+    margin-bottom: 25px;
+    display: flex;
+    align-items: end;
+}
+
+.mainOptions_title-text {
+    margin-right: 10px;
+    font-size: 24px;
+    color: #F8F8F8;
+    
+}
+
+.mainOptions_title-edit, .mainOptions_title-buy {
+    color: #FAC704;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+
+
+.mainOptions_info {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: end;
+    
+}
+
+.mainOptions_info-key {
+    margin-right: 20px;
+    color: #989898;
+    font-size: 16px;
+    min-width: 150px;
+}
+
+.mainOptions_info-value {
+    color: #F8F8F8;
+    font-size: 18px;
+    margin-right: 10px;
+}
+
+.mainOptions_info-disable {
+    cursor: pointer;
+    color: #F13939;
+    font-size: 16px;
+}
+
+.mainOptions_info-link {
+    cursor: pointer;
+    color: #FAC704;
+    font-size: 16px;
+}

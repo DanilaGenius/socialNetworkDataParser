@@ -1,0 +1,19 @@
+.checkbox {
+    display: flex;
+    margin: 5px 5px 5px 0px;
+    
+    align-items: center;
+    width: 100%;
+    
+  }
+
+  .checkbox-input {
+    background-color: #FAC704;  
+
+  }
+  
+  .checkbox-label {
+    color: #F8F8F8;
+    font-size: 14px;
+    margin-left: 10px;
+  }

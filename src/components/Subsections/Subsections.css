@@ -1,0 +1,32 @@
+.subsections {
+    max-width: 300px;
+    width: 100%;
+    min-width: 150px;
+    margin-right: 40px;
+}
+
+.subsections_elems {
+    display: flex;
+    flex-direction: column;
+}
+
+.subsections_elems-elem {
+    width: 100%;
+    height: 60px;
+    padding: 0 15px 0 0;
+    border-right: 2px solid rgba(196, 196, 196, 0.2);
+    color: rgba(248, 248, 248, 0.6);
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    cursor: pointer;
+}
+
+.subsections_elems-elem:hover {
+    color: #FAC704;
+}
+
+.subsections_elems-elem-active {
+    color: #FAC704;
+    border-right: 2px solid #FAC704;
+}

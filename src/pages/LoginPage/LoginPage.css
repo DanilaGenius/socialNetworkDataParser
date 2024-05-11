@@ -1,0 +1,89 @@
+.loginPage {
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
+    color: aliceblue;
+
+}
+.loginPage_content {
+    width: 100%;
+    max-width: 680px;
+    height: 580px;
+    padding: 0;
+    margin: 100px 0 0 0 ;
+    background: rgb(248, 248, 248, 0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.loginPage_container {
+    margin: 40px 100px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.loginPage_tabs {
+    display: flex;
+}
+.loginPage_tabs-tab {
+    width: 240px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    margin-bottom: 30px;
+    border-bottom:2px #FAC704 solid ;
+}
+
+.loginPage_tabs-tab:nth-last-child(1) {
+    border-bottom:2px #3F3F45 solid ;
+}
+
+.loginPage_inputs {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+}
+
+.loginPage_inputs-input {
+    background: #BFBFBF;
+    color: #989898;
+    height: 50px;
+    width: 100%;
+    padding: 0 0 0 20px;
+    margin: 10px;
+}
+
+.loginPage_enter {
+    display: flex;
+    justify-content: center;
+    
+}
+
+.loginPage_enter-btn {
+    background: #fac9044b;
+    height: 50px;
+    width: 250px;
+    margin-bottom: 30px;
+    color: white;
+}
+
+.loginPage_futter {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.loginPage_error {
+    text-align: center;
+}
+
+.loginPage_error-text {
+    color: #F13939;
+}
+
+.successfulReg-text {
+    color:  #39f142
+}

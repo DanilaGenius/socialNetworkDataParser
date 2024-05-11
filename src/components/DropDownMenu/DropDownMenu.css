@@ -1,0 +1,42 @@
+.dropDownMenu{
+   width: 200px;
+    /* position: absolute;
+    top: 100px;
+    left: 500px; */
+    background: #1A1A1C;
+    border-radius: 5px;
+    padding: 0 5px 0 5px;
+  }
+
+  .dropDownMenu_positions {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   
+   
+  }
+
+  .dropDownMenu_positions-elem {
+   display: flex;
+   align-items: center;
+   justify-content: start;
+   height: 40px;
+   width: 100%;
+   font-size: 12px;
+   cursor: pointer;
+   padding-left: 20px;
+   color: #989898;
+   border-bottom: 1px #989898 solid;
+   
+  }
+
+  .dropDownMenu_positions-elem:nth-last-child(1) {
+    margin-bottom: 5px;
+  }
+
+  .dropDownMenu_positions-elem:hover {
+   color: #FFFF;
+   border-bottom: 1px #FFFF solid;
+  }
+
+  

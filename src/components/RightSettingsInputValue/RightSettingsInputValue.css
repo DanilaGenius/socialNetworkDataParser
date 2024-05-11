@@ -1,0 +1,21 @@
+
+
+.rightSettingsInputValue {
+    width: 100%;    
+    margin-bottom: 10px;
+   
+}
+
+.rightSettingsInputValue-label {
+    color: #BFBFBF;
+}
+
+.rightSettingsInputValue-value {
+    color: #FFFFFF;
+    width: 100%;
+    background: #3F3F45;
+    border: none;
+    font-size: 14px;
+}
+
+

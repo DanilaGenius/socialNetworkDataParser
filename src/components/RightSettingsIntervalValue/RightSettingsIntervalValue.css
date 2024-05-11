@@ -1,0 +1,25 @@
+.rightSettingsIntervalValue {
+    width: 100%;    
+    margin-bottom: 10px;
+}
+
+.rightSettingsIntervalValue-label {
+    color: #BFBFBF;
+}
+
+.rightSettingsIntervalValue-value {
+    color: #FFFFFF;
+    width: 100%;
+    background: #3F3F45;
+    border: none;
+    font-size: 14px;
+}
+
+.rightSettingsIntervalValue-interval {
+    display: flex;
+}
+
+.rightSettingsIntervalValue-split {
+    color: #FFFFFF;
+    margin: 0 5px 0 5px;
+}
