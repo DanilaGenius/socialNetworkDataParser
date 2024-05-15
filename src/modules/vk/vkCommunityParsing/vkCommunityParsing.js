@@ -1,9 +1,9 @@
 
 
-export default async function vkCommunityParsing(channelName, countEntries) {
+export default async function vkCommunityParsing(channelName, countEntries, access_token) {
 	// const channelName = channelName;
 	const url = '/vkgetcommunity';
-	console.log('vkCommunityParsing')
+
 	const options = {
 		method: "POST",
 		headers: {
@@ -11,18 +11,12 @@ export default async function vkCommunityParsing(channelName, countEntries) {
 		},
 		body: JSON.stringify({
 			channelName: channelName,
-			countEntries: countEntries
+			countEntries: countEntries,
+			access_token: access_token
 		})
 	}
 
 	fetch(url, options);
-
-	// try {
-		
-	// } catch (ex) {
-	// 	console.log('Something failed');
-	// 	console.log(ex);
-	// }
 
 
 	let result;

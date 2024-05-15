@@ -43,3 +43,7 @@
     font-size: 18px;
     margin-right: 10px;
 }
+
+.mainPersonalData_title-edit:hover {
+    text-decoration: underline;
+}

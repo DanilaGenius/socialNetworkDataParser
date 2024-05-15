@@ -45,15 +45,15 @@ export default function TgGetCommunity()  {
  
         }
 
-        const filters = ['Пользователи', 'Фото ', 'Видео', 'Истории', 'Файлы', 'Аудио', 'Ссылки', 'Гифки', 'Ссылки', 'Записи'];
-        
+        // const filters = ['Пользователи', 'Фото ', 'Видео', 'Истории', 'Файлы', 'Аудио', 'Ссылки', 'Гифки', 'Ссылки', 'Записи'];
+        const filters = [];
        
 
         
         return (             
             <div  className="tgGetCommunity">
                 <div  className="tgGetCommunity_inputs">
-                    <input  className="tgGetCommunity_inputs-input" type='text' placeholder='Ссылка на группу' id={'tgGetCommunity-inputLink'} ref={tgGetCommunityInputLink}></input>
+                    <input  className="tgGetCommunity_inputs-input" type='text' placeholder='Ссылка на группу, пример rabota_novosibirsk3' id={'tgGetCommunity-inputLink'} ref={tgGetCommunityInputLink}></input>
                 </div>
 
                 <div className='tgGetCommunity_filters'>

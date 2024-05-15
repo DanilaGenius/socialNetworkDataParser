@@ -4,7 +4,7 @@ import './YtGetChannel.css'
 import Checkbox from '../Checkbox/Checkbox';
 import ResultTable from '../ResultTable/ResultTable';
 import ytChannelParser from '../../modules/yt/ytChannelParser/ytChannelParser';
-
+import { useSelector } from 'react-redux';
 export default function YtGetChannel()  {
        
         
@@ -13,7 +13,7 @@ export default function YtGetChannel()  {
         const ytGetChannelButtonStart = useRef(null);
 
         const ytGetChannelInputLink = useRef(null);
-
+        const ytApiKey = useSelector((state) => state.accountLinking.ytApiKey)
         const [resultTableData, setResultTableData] = useState(null);
         const [rows, setRows] = useState([
             // ['1','Дата загрузки','Просмотры','Комм-рии','Лайки','Тип объекта','Статус'],
@@ -32,7 +32,7 @@ export default function YtGetChannel()  {
 
             if (channelName == '' || false) return
 
-            await ytChannelParser(channelName).then(res => {
+            await ytChannelParser(channelName, 10 ,ytApiKey).then(res => {
                 setResultTableData(res)
             })
 
@@ -68,15 +68,15 @@ export default function YtGetChannel()  {
  
         }
 
-        const filters = ['Получить видео', 'Получить трансляции ', 'Получить информацию', 'Получить плейлисты', 'Получить short видео'];
-        
+        // const filters = ['Получить видео', 'Получить трансляции ', 'Получить информацию', 'Получить плейлисты', 'Получить short видео'];
+        const filters = [];
        
 
         
         return (             
             <div  className="ytGetChannel">
                 <div  className="ytGetChannel_inputs">
-                    <input  className="ytGetChannel_inputs-input" type='text' placeholder='Ссылка на группу' id={'ytGetChannel-inputLink'} ref={ytGetChannelInputLink}></input>
+                    <input  className="ytGetChannel_inputs-input" type='text' placeholder='Идентификатор группы, пример UCkAEWxO7NanBzHG_Xkn7-Mg' id={'ytGetChannel-inputLink'} ref={ytGetChannelInputLink}></input>
                 </div>
 
                 <div className='ytGetChannel_filters'>

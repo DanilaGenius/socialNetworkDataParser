@@ -3,6 +3,7 @@ import './Content.css'
 import MainPersonalData from '../MainPersonalData/MainPersonalData';
 import MainOptions from '../MainOptions/MainOptions';
 import VkGetCommunity from '../VkGetCommunity/VkGetCommunity';
+import VkGetProfiles from '../VkGetProfiles/VkGetProfiles';
 import TgGetCommunity from '../TgGetCommunity/TgGetCommunity';
 import YtGetChannel from '../YtGetChannel/YtGetChannel';
 import OkGetCommunity from '../OkGetCommunity/OkGetCommunity'
@@ -26,7 +27,7 @@ export default function Content()  {
                 {(sectionName == 'yt' && subsectionName == 'yt-channel') && <YtGetChannel />}
                 {(sectionName == 'yt' && subsectionName == 'yt-search') && ''}
 
-                {(sectionName == 'vk' && subsectionName == 'vk-profiles') && ''}
+                {(sectionName == 'vk' && subsectionName == 'vk-profiles') && <VkGetProfiles />}
                 {(sectionName == 'vk' && subsectionName == 'vk-communities') && <VkGetCommunity /> }
                 {(sectionName == 'vk' && subsectionName == 'vk-search') && ''}
 

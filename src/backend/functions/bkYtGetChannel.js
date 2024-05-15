@@ -1,7 +1,7 @@
 const axios = require('axios');
 
-async function bkYtGetChannel(channelId) {
-  const apiKey = 'AIzaSyDyp1VUM297ACl7pMHkufKUysbg31A_q2o';
+async function bkYtGetChannel(channelId, count, ytApiKey) {
+  const apiKey = ytApiKey;
   
   try {
     // Получаем информацию о канале

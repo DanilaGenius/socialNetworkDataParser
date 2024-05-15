@@ -51,10 +51,31 @@
     cursor: pointer;
     color: #F13939;
     font-size: 16px;
+    margin-right: 10px;
 }
 
 .mainOptions_info-link {
     cursor: pointer;
     color: #FAC704;
     font-size: 16px;
+    margin-right: 10px;
+}
+
+.mainOptions_info-requisites {
+    cursor: pointer;
+}
+.mainOptions_info-requisites:hover, .mainOptions_info-link:hover,.mainOptions_title-edit:hover, .mainOptions_title-buy:hover  {
+    text-decoration: underline;
+}
+
+.mainOptionsRequisitesWindow {
+    background: #1A1A1C;
+    width: 100%;
+    min-height: 100px;
+    padding: 10px;
+}
+
+.mainOptionsRequisitesWindow_saveBtn {
+    margin-top: 10px;
+    width: 100%;
 }

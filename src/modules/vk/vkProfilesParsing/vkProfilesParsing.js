@@ -1,23 +1,28 @@
 
 
-export default async function ytChannelParser(channelName,count, ytApiKey) {
+export default async function vkProfilesParsing(userIds, access_token) {
 	// const channelName = channelName;
-	const url = '/ytgetchannel';
-
+	const url = '/vkgetprofiles';
+	console.log('vkgetprofiles')
 	const options = {
 		method: "POST",
 		headers: {
 			"Content-Type": "application/json"
 		},
 		body: JSON.stringify({
-			channelName: channelName,
-			count: count,
-			ytApiKey: ytApiKey
+			userIds: userIds,
+			access_token: access_token
 		})
 	}
 
 	fetch(url, options);
 
+	// try {
+		
+	// } catch (ex) {
+	// 	console.log('Something failed');
+	// 	console.log(ex);
+	// }
 
 
 	let result;

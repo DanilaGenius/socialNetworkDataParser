@@ -10,7 +10,7 @@ export default function MainmainPersonalData()  {
             <div className='mainPersonalData_block'>
                 <div  className="mainPersonalData_title">
                         <div  className="mainPersonalData_title-text">Основная информация</div>
-                        <div  className="mainPersonalData_title-edit">Редактировать</div>
+                        {/* <div  className="mainPersonalData_title-edit">Редактировать</div> */}
                 </div>
                 
                 <div  className="mainPersonalData_info">
@@ -35,7 +35,7 @@ export default function MainmainPersonalData()  {
             <div className='mainPersonalData_block'>
                 <div  className="mainPersonalData_title">
                         <div  className="mainPersonalData_title-text">Адрес электронной почты</div>
-                        <div  className="mainPersonalData_title-edit">Редактировать</div>
+                        {/* <div  className="mainPersonalData_title-edit">Редактировать</div> */}
                 </div>
 
                 <div  className="mainPersonalData_info">
@@ -45,7 +45,7 @@ export default function MainmainPersonalData()  {
                 </div>
             </div>
 
-            <div className='mainPersonalData_block'>
+            {/* <div className='mainPersonalData_block'>
                 <div  className="mainPersonalData_title">
                         <div  className="mainPersonalData_title-text">Адрес электронной почты</div>
                         
@@ -55,7 +55,7 @@ export default function MainmainPersonalData()  {
                         
                         <div  className="mainPersonalData_title-edit">Изменить</div>
                 </div>
-                </div>
+                </div> */}
 
         </div>
         )

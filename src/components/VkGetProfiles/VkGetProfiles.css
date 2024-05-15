@@ -1,0 +1,46 @@
+.vkGetProfiles {
+    width: 100%;
+    
+}
+
+.vkGetProfiles_inputs {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+.vkGetProfiles_inputs-input {
+    background: #BFBFBF;
+    color: #989898;
+    height: 50px;
+    width: 100%;
+    padding: 0 0 0 20px;
+    color: #FFFFFFFF;
+}
+
+.vkGetProfiles_filters {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 200px 200px 200px 200px ;
+    grid-template-rows: 30px 30px 30px ;
+    margin-bottom: 10px;
+}
+
+
+.vkGetProfiles_btns {
+    display: flex;
+    justify-content: end;
+    width: 100%;
+
+}
+.vkGetProfiles_btns-btn:nth-last-child(1) {
+    margin-right: 0;
+}
+.vkGetProfiles_btns-btn {
+    margin-right: 10px;
+}
+
+
+
+
+  

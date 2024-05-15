@@ -2,7 +2,7 @@
 
 
 
-async function bkVkGetCommunity(channelName, countEntries) {
+async function bkVkGetCommunity(channelName, countEntries, accessToken) {
 
 
 	try {
@@ -10,8 +10,8 @@ async function bkVkGetCommunity(channelName, countEntries) {
 		countEntries = countEntries || 1
 
 //region_nsk54
-		const groupId = channelName; // ID вашего сообщества
-		const accessToken = "vk1.a.W4YBB2EdAIUy8TTCfvL-ScO7c6jBKk79aIY8nlMRQxEreRKC-dS-goqhBTsbtSdNdj73JDgc6hMGpN1U8I2ly1ghXPe2F_lByGIPvaZZxTlfRKEqkJ_Z8RlNjuVDuFKjH-RIDjcpGd3FBmY_kgb_uquwl60uWAiYBEODGs91eDS2mdgeRhvNp2JpYSYKo4pU"; // Ваш токен доступа API VK
+		const groupId = channelName; 
+		
 
 		const url = `https://api.vk.com/method/wall.get?domain=${groupId}&access_token=${accessToken}&v=5.131&count=4`;
 		

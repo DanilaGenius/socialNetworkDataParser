@@ -14,11 +14,11 @@ export default function SubsectionsVk()  {
                  
             <div >
                 
-                {/* <div  className={`subsections_elems-elem ${(subsectionName == 'vk-profiles') ? 'subsections_elems-elem-active' : ''}`} 
+                <div  className={`subsections_elems-elem ${(subsectionName == 'vk-profiles') ? 'subsections_elems-elem-active' : ''}`} 
                 onClick={() => clickOnSubsection('vk-profiles')}
                 id="vk-profiles">
                     Получить профиля 
-                </div> */}
+                </div>
                 <div  className={`subsections_elems-elem ${(subsectionName == 'vk-communities') ? 'subsections_elems-elem-active' : ''}`} 
                 onClick={() => clickOnSubsection('vk-communities')}
                 id="vk-communities">
