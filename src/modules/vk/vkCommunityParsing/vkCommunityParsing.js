@@ -2,8 +2,8 @@
 
 export default async function vkCommunityParsing(channelName, countEntries, access_token) {
 	// const channelName = channelName;
-	const url = 'http://localhost:3002/vkgetcommunity';
-	// const url = '/vkgetcommunity';
+	// const url = 'http://localhost:3002/vkgetcommunity';
+	const url = '/vkgetcommunity';
 	let result;
 	const options = {
 		method: "POST",

@@ -30,8 +30,8 @@ export default function LeftMenu(props)  {
             <div  className={`leftMenu-elem ${(sectionName == 'tg') ? 'leftMenu-elem-active' : ''}`} 
             onClick={() => clickOnSection('tg', 'tg-communities')}>TELEGRAM</div>
 
-            {/* <div  className={`leftMenu-elem ${(sectionName == 'ok') ? 'leftMenu-elem-active' : ''}`} 
-            onClick={() => clickOnSection('ok', 'ok-profiles')}>OK</div> */}
+            <div  className={`leftMenu-elem ${(sectionName == 'ok') ? 'leftMenu-elem-active' : ''}`} 
+            onClick={() => clickOnSection('ok', 'ok-profiles')}>OK</div>
         </div>
         )
 }

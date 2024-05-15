@@ -1,18 +1,20 @@
-
+        
         import React, {useRef, useState} from 'react';
         import './OkGetCommunity.css'
         import Checkbox from '../Checkbox/Checkbox';
         import ResultTable from '../ResultTable/ResultTable';
-        import okCommunityParsing from '../../modules/ok/okCommunityParsing/okCommunityParsing.js'
+        import okGroupParsing from '../../modules/ok/okGroupParsing/okGroupParsing.js'
+        import translit from '../../utils/translit.js'
+        import collectFilters from '../../utils/collectFilters.js'
+        
 
         export default function OkGetCommunity()  {
        
         const okGetCommunityButtonSave = useRef(null);
         const okGetCommunityButtonStop = useRef(null);
         const okGetCommunityButtonStart = useRef(null);
-
         const okGetCommunityInputLink = useRef(null);
-
+        
         const [resultTableData, setResultTableData] = useState(null);
         const [rows, setRows] = useState([
             // ['1','Дата загрузки','Просмотры','Комм-рии','Лайки','Тип объекта','Статус'],
@@ -22,25 +24,46 @@
         const column = ['Наименование','Автор','Дата загрузки', 'Просмотры', 'Комментарии', 'Лайки', 'Тип объекта','Статус'];
 
         async function handlerOkStartParsingCommunity() {
-            const channelName = okGetCommunityInputLink.current.value
-            if (channelName == '' || false) return
-            await okCommunityParsing(channelName).then(res => {
-                setResultTableData(res)
-            })
+            const filtersObj = collectFilters(filters)
+            const groupId = okGetCommunityInputLink.current.value
+            if (groupId == '' || false) return
+            const obj2 = {
+                count:555
+            }
 
-            if (resultTableData == null) return
+            
+            
+            await okGroupParsing(groupId, {...filtersObj, ...obj2})
+                
+            //     if (res.error instanceof Object) {
+            //         setResultTableData(res.error)
+                    
+            //     } 
+            //     else
+            //     {setResultTableData(res.response) }
+
+ 
+            // })
+            
+            // if (resultTableData == null) return
             // resultTableData.forEach((e,index) => {
                 // const {'data_post, data_view,user_url, user_photo, user_name, message_url,message_text, views, datetime'} = e;
                 // rows.push([data_post,datetime,views,message_text, user_name, user_url , 'Пост','Успешно'])
 
             // })
 
-            rows.push([1,2,3,4,5,6])
+            
 
  
         }
+        const [value, setValue] = useState('')
 
-        const filters = ['Получить информацию ', 'Получить видео', 'Получить фотографии', 'Получить альбомы', 'Получить участников', 'Получить записи'];
+        const handleChange = (event) => {
+            setValue(event.target.value)
+        }
+        
+
+        const filters = ['Получить информацию', 'Получить видео', 'Получить фотографии', 'Получить альбомы', 'Получить участников', 'Получить записи'];
         
        
 
@@ -48,12 +71,12 @@
         return (                
             <div  className="okGetCommunity">
                 <div  className="okGetCommunity_inputs">
-                    <input  className="okGetCommunity_inputs-input" type='text' placeholder='Ссылка на группу' id={'okGetCommunity-inputLink'} ref={okGetCommunityInputLink}></input>
+                    <input  className="okGetCommunity_inputs-input" type='text' placeholder='Идентификатор группы, пример 70000001858236' id={'okGetCommunity-inputLink'} ref={okGetCommunityInputLink}></input>
                 </div>
 
                 <div className='okGetCommunity_filters'>
                            
-                    {filters.map( (e,i) =>  <Checkbox textLabel={e} index={i} /> )}
+                    {filters.map( (e,i) =>  <Checkbox textLabel={e} index={i} id={translit(e)}/> )}
                
                 </div>
 

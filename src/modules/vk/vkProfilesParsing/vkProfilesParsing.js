@@ -2,8 +2,8 @@
 
 export default async function vkProfilesParsing(userIds, access_token) {
 	// const channelName = channelName;
-	const url = 'http://localhost:3002/vkgetprofiles';
-	// const url = '/vkgetprofiles';
+	// const url = 'http://localhost:3002/vkgetprofiles';
+	const url = '/vkgetprofiles';
 let result;
 	const options = {
 		method: "POST",

@@ -17,6 +17,10 @@ export default function MainOptions()  {
         const vkAccessToken = useSelector((state) => state.accountLinking.vkAccessToken)
         const tgAccessToken = useSelector((state) => state.accountLinking.tgAccessToken)
         const okAccessToken = useSelector((state) => state.accountLinking.okAccessToken)
+
+        const okApplicationID = useSelector((state) => state.accountLinking.okApplicationID)
+        const okApplicationPublicKey = useSelector((state) => state.accountLinking.okApplicationPublicKey)
+        const okSessionSecretKey = useSelector((state) => state.accountLinking.okSessionSecretKey)
         const dispatch = useDispatch()
 
         const [visible, setVisible] = useState(false);
@@ -85,14 +89,27 @@ setVisibleSaveBtn(true);
                         dispatch(changeLinkingState({ytApiKey: ytApiKey}))                
                 }
                 if (state === 'okRequisitesBtn') {
+                        const okApplicationID = document.querySelector('#okApplicationID').value
+                        const okApplicationPublicKey = document.querySelector('#okApplicationPublicKey').value
                         const okAccessToken = document.querySelector('#okAccessToken').value
-                        console.log(okAccessToken)   
-                        dispatch(changeLinkingState({okAccessToken: okAccessToken}))        
+                        const okSessionSecretKey = document.querySelector('#okSessionSecretKey').value
+  
+                        
+                        dispatch(changeLinkingState({
+                                okApplicationID: okApplicationID,
+                                okApplicationPublicKey: okApplicationPublicKey,
+                                okAccessToken: okAccessToken,
+                                okSessionSecretKey:okSessionSecretKey
+
+                        }))        
                 }
                 setVisibleSaveBtn(false)
                 setStateSaveTextRes('Данные записаны')
         }
-
+        
+        
+        
+        
         return (             
         <div  className="mainOptions">
             <div className='mainOptions_block'>
@@ -134,19 +151,24 @@ setVisibleSaveBtn(true);
                         {/* <div  className="mainOptions_info-link">Подключить</div> */}
                         <div  className="mainOptions_info-requisites" ref={tgRequisitesBtn} id='tgRequisitesBtn' onClick={handlerClickRequisitesBtn}>Ввести реквизиты для использования</div>
                 </div>
-                {/* <div  className="mainOptions_info">
-                        <div  className="mainOptions_info-key">OK</div> */}
+                <div  className="mainOptions_info">
+                        <div  className="mainOptions_info-key">OK</div>
                         {/* <div  className="mainOptions_info-value">text</div> */}
                         {/* <div  className="mainOptions_info-link">Подключить</div> */}
-                        {/* <div  className="mainOptions_info-requisites" ref={okRequisitesBtn} id='okRequisitesBtn' onClick={handlerClickRequisitesBtn}>Ввести реквизиты для использования</div>
-                </div> */}
+                        <div  className="mainOptions_info-requisites" ref={okRequisitesBtn} id='okRequisitesBtn' onClick={handlerClickRequisitesBtn}>Ввести реквизиты для использования</div>
+                </div>
                 { visible &&
                         <div  className="mainOptionsRequisitesWindow">
             
                         {state == 'ytRequisitesBtn' && <InputValue label="API key yt:" id="ytApiKey" presentValue={ytApiKey} />}
                         {state == 'vkRequisitesBtn' && <InputValue label="Access token vk:" id="vkAccessToken" presentValue={vkAccessToken} />}
                         {state == 'tgRequisitesBtn' && <InputValue label="Access token tg ( Не обязательно ):" id="tgAccessToken" presentValue={tgAccessToken} />}
-                        {state == 'okRequisitesBtn' && <InputValue label="Access token ok:" id="okAccessToken" presentValue={okAccessToken} />}
+
+                        
+                        {state == 'okRequisitesBtn' && <InputValue label="Application id ok:" id="okApplicationID" presentValue={okApplicationID} />}
+                        {state == 'okRequisitesBtn' && <InputValue label="Application public key ok:" id="okApplicationPublicKey" presentValue={okApplicationPublicKey} />}
+                        {state == 'okRequisitesBtn' && <InputValue label="Вечный access_token:" id="okAccessToken" presentValue={okAccessToken} />}
+                        {state == 'okRequisitesBtn' && <InputValue label="Session_secret_key ok:" id="okSessionSecretKey" presentValue={okSessionSecretKey} />}
 
                         {visibleSaveBtn && <input className="mainOptionsRequisitesWindow_saveBtn" type='submit' value={'Записать'} onClick={handlerClickSaveRequisitesBtn}/>} 
                         <div className='mainOptionsRequisitesWindow_saveTextRes'>{stateSaveTextRes}</div>
@@ -168,6 +190,16 @@ setVisibleSaveBtn(true);
 
                 <div> для ютуба AIzaSyDyp1VUM297ACl7pMHkufKUysbg31A_q2o </div>
                 <div> для телеграмма  AAEipgP99Rib0xCphXCskJsQ6xnrckVlyfA </div>
+
+                <div>
+                Для Однокласников
+                // Application ID: 512002548227.
+                //  Application public key Публичный ключ приложения: CEADOLLGDIHBABABA.
+                // Application secret key Секретный ключ приложения: 9F733A03FB1BDF5C056B2993.
+
+                // Вечный access_token:-n-0N9HZ7Rq10VZUN4Ol3x4DN4hdlDj8PZT202NXvou2chyHue2Ynb2hrxexOYOqkxcnwdC7v8Bph3QIdO2f
+                // Session_secret_key:4a8dce0952adb25818362893fdc51d4b
+                </div>
                 
                         
         </div>

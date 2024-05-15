@@ -1,18 +1,20 @@
 import React from 'react';
+
 import './Checkbox.css'
 
 
 
 export default function Checkbox(props)  {
-        const {textLabel, index} = props;
-    
+        const {textLabel, index, id} = props;
+
+        
         return (             
         <div className="checkbox" key={index}>
             <input className="checkbox-input" 
             type="checkbox"
-            id={index}
+            id={id} 
             />
-            <label className="checkbox-label" 
+            <label className="checkbox-label"  
             htmlFor={index}>
                 {textLabel}
             </label>
