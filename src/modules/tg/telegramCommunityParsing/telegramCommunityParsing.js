@@ -1,9 +1,10 @@
 
 
 export default async function telegramCommunityParsing(channelName, countEntries) {
-	// const channelName = channelName;
-	const url = '/tggetcommunity';
 
+	const url = 'http://localhost:3002/tggetcommunity';
+	// const url = '/tggetcommunity';
+	let result;
 	const options = {
 		method: "POST",
 		headers: {
@@ -14,21 +15,11 @@ export default async function telegramCommunityParsing(channelName, countEntries
 			countEntries: countEntries
 		})
 	}
+	
+	result =  await fetch(url, options).then(res => res.json());
+	
+	
 
-	fetch(url, options);
-
-	// try {
-		
-	// } catch (ex) {
-	// 	console.log('Something failed');
-	// 	console.log(ex);
-	// }
-
-
-	let result;
-	await fetch(url)
-	.then(res => res.json())
-	.then(res => result = res)
 	
 
 	return result

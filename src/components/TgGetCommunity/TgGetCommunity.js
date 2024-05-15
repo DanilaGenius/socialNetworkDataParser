@@ -36,7 +36,7 @@ export default function TgGetCommunity()  {
             })
 
             if (resultTableData == null) return
-            resultTableData.forEach((e,index) => {
+            resultTableData.forEach((e, index) => {
                 const {data_post, data_view,user_url, user_photo, user_name, message_url,message_text, views, datetime} = e;
                 rows.push([data_post,datetime,views,message_text, user_name, user_url , 'Пост','Успешно'])
                 objData.push(JSON.stringify(e))

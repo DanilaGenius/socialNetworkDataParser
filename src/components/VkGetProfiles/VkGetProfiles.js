@@ -37,17 +37,29 @@ export default function VkGetProfiles()  {
             userIds.trim();
             if (userIds == false) return
             await vkProfilesParsing(userIds, vkAccessToken).then(res => {
-                setResultTableData(res)
+                if (res.error instanceof Object) {
+                    setResultTableData(res.error)
+                    
+                } 
+                else
+                {setResultTableData(res.response) }
             })
 
             
 
             if (resultTableData == null) return
-            await resultTableData.forEach((e, index) => {
-                const {id, first_name, last_name} = e;
-                rows.push([id,`${first_name} ${last_name}`,'Дата загрузки', 'Нет у профиля просмотров', 'Нет у профиля комм-рий', 'Нет у профиля лайков', 'Информация о профиле', 'Успешно'])
-                objData.push(JSON.stringify(e))
-            })
+            if('error_code' in resultTableData) {
+                rows.push(['-','-', '-', '-', '-', '-', '-', 'Ошибка'])
+                objData.push(JSON.stringify(resultTableData))
+                return
+            } else {
+                await resultTableData.forEach((e, index) => {
+                    const {id, first_name, last_name} = e;
+                    rows.push([id,`${first_name} ${last_name}`,'-', '-', '-', '-', 'Информация о профиле', 'Успешно'])
+                    objData.push(JSON.stringify(e))
+                })
+            }
+            
 
  
         }

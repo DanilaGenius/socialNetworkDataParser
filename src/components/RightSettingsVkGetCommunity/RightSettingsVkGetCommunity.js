@@ -10,7 +10,7 @@ export default function RightSettingsTgGetCommunity()  {
 
         return (             
         <div  className="rightSettingsTgGetCommunity">       
-            <RightSettingsInputValue label="Лимит постов, не работает у всех разделов это константа" value="5" id="vk-limit" />
+            <RightSettingsInputValue label="Лимит постов у всех константа" value="5" id="vk-limit" />
             {/* <RightSettingsIntervalValue label="Лимит" valueStart="0" valueEnd="5" id="vk-long" />
             <RightSettingsCheckBox label="Комментарии" value='' id="vk-comments" /> */}
         </div>

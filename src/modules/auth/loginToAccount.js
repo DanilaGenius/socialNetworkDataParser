@@ -4,7 +4,9 @@
 export default async function loginToAccount(login, password) {
   
     let arrUsers;
-    arrUsers = await fetch('/userbase')
+    // const url = 'http://localhost:3002/userbase'
+    const url = '/userbase'
+    arrUsers = await fetch(url)
             .then(res => res.json())
             .then(res => arrUsers = res.userBase)
 

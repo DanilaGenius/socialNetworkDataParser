@@ -1,9 +1,10 @@
 
 
 export default async function ytChannelParser(channelName,count, ytApiKey) {
-	// const channelName = channelName;
-	const url = '/ytgetchannel';
 
+	// const url = 'http://localhost:3002/ytgetchannel';
+	const url = '/ytgetchannel';
+	let result;
 	const options = {
 		method: "POST",
 		headers: {
@@ -16,15 +17,9 @@ export default async function ytChannelParser(channelName,count, ytApiKey) {
 		})
 	}
 
-	fetch(url, options);
+	result =  await fetch(url, options).then(res => res.json());
 
 
-
-	let result;
-	await fetch(url)
-	.then(res => res.json())
-	.then(res => result = res)
-	
 
 	return result
 

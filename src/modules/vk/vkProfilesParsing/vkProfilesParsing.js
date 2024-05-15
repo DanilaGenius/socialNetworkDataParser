@@ -2,8 +2,9 @@
 
 export default async function vkProfilesParsing(userIds, access_token) {
 	// const channelName = channelName;
-	const url = '/vkgetprofiles';
-	console.log('vkgetprofiles')
+	const url = 'http://localhost:3002/vkgetprofiles';
+	// const url = '/vkgetprofiles';
+let result;
 	const options = {
 		method: "POST",
 		headers: {
@@ -15,20 +16,7 @@ export default async function vkProfilesParsing(userIds, access_token) {
 		})
 	}
 
-	fetch(url, options);
-
-	// try {
-		
-	// } catch (ex) {
-	// 	console.log('Something failed');
-	// 	console.log(ex);
-	// }
-
-
-	let result;
-	await fetch(url)
-	.then(res => res.json())
-	.then(res => result = res)
+	result =  await fetch(url, options).then(res => res.json());
 	
 
 	return result

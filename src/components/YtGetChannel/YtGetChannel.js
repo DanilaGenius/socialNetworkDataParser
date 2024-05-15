@@ -33,7 +33,15 @@ export default function YtGetChannel()  {
             if (channelName == '' || false) return
 
             await ytChannelParser(channelName, 10 ,ytApiKey).then(res => {
-                setResultTableData(res)
+                console.log(res)
+
+                if (res.error instanceof Object) {
+                    setResultTableData(res)
+                    
+                } 
+                else
+                {setResultTableData(res) }
+                
             })
 
             if (resultTableData == null) return

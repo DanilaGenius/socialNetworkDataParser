@@ -134,12 +134,12 @@ setVisibleSaveBtn(true);
                         {/* <div  className="mainOptions_info-link">Подключить</div> */}
                         <div  className="mainOptions_info-requisites" ref={tgRequisitesBtn} id='tgRequisitesBtn' onClick={handlerClickRequisitesBtn}>Ввести реквизиты для использования</div>
                 </div>
-                <div  className="mainOptions_info">
-                        <div  className="mainOptions_info-key">OK</div>
+                {/* <div  className="mainOptions_info">
+                        <div  className="mainOptions_info-key">OK</div> */}
                         {/* <div  className="mainOptions_info-value">text</div> */}
                         {/* <div  className="mainOptions_info-link">Подключить</div> */}
-                        <div  className="mainOptions_info-requisites" ref={okRequisitesBtn} id='okRequisitesBtn' onClick={handlerClickRequisitesBtn}>Ввести реквизиты для использования</div>
-                </div>
+                        {/* <div  className="mainOptions_info-requisites" ref={okRequisitesBtn} id='okRequisitesBtn' onClick={handlerClickRequisitesBtn}>Ввести реквизиты для использования</div>
+                </div> */}
                 { visible &&
                         <div  className="mainOptionsRequisitesWindow">
             
@@ -161,6 +161,14 @@ setVisibleSaveBtn(true);
                                 <div  className="mainOptions_title-buy">Приобрести</div> */}
                         </div>
                 </div>
+
+                <div>
+                        использовал для вк - vk1.a.kKVWpGTmfrixw2lPkLtIyW6E5XgRezjz1oXaNhQy0H4KykyFYkp9dI9G38P-c8w03nwuoU0TYDWxcGJm11qB_VwEav2ny-2vUdUJe8Q6enmNNBdF2xCoBmAO01BOD5ejUlzLXvQ_pDnMFXx6DSNazwIqRmSoDvrLF6y_rwrIXAZCHpcDP3CJBxPGUWUjvIpN1sMLrwpR5V-9G5YPrh-WjQ </div>
+                       
+
+                <div> для ютуба AIzaSyDyp1VUM297ACl7pMHkufKUysbg31A_q2o </div>
+                <div> для телеграмма  AAEipgP99Rib0xCphXCskJsQ6xnrckVlyfA </div>
+                
                         
         </div>
         )

@@ -38,7 +38,7 @@ export default function VkGetCommunity()  {
 
         const filters = []
 
-        const column = ['Идентификатор','Автор','Дата загрузки','Просмотры','Комм-рии', 'Мой лайк','Тип объекта','Статус'];;
+        const column = ['Идентификатор','Автор','Дата загрузки','Просмотры','Комм-рии', 'Репосты', 'Лайки', 'Мой лайк','Тип объекта','Статус'];;
 
         async function handlerVkStartParsingCommunity() {
 
@@ -46,17 +46,45 @@ export default function VkGetCommunity()  {
             
             if (channelName == false) return
             await vkCommunityParsing(channelName, 'countStatik', vkAccessToken).then(res => {
-                setResultTableData(res)
+                
+                if (res.error instanceof Object) {
+                    setResultTableData(res.error)
+                    
+                } 
+                else
+                {setResultTableData(res.response) }
+
+ 
             })
 
             
 
             if (resultTableData == null) return
-            resultTableData.forEach((e, index) => {
-                const {postId, text, likes,comments,type, reposts,views} = e;
-                rows.push([postId,'Не указан',views,, comments, likes, reposts, type, 'Успешно'])
-                objData.push(JSON.stringify(e))
-            })
+            if('error_code' in resultTableData) {
+                rows.push(['-','-','-','', '-', '-', '-', '-', '-', 'Ошибка'])
+                objData.push(JSON.stringify(resultTableData))
+                return
+            } else {
+                resultTableData.groups.forEach((e, index) => {
+
+                    const {id,name,type} = e;
+                    rows.push([id,name,'-', '-', '-','-', '-', '-', type, 'Успешно'])
+                    objData.push(JSON.stringify(e))
+                })
+
+
+                resultTableData.items.forEach((e, index) => {
+                    
+                    console.log(e)
+                    const {id,comments,date,  likes,type, reposts,views} = e;
+                    const {count, user_likes} = likes
+
+                    rows.push([id,`-`,date, views.count, comments.count, reposts.count, count, user_likes, type, 'Успешно'])
+                    objData.push(JSON.stringify(e))
+                })
+            }
+            
+            
 
  
         }

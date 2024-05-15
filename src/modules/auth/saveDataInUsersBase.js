@@ -1,8 +1,8 @@
 
 export default async function addDataInUsersBase(obj) {
     const reactData = obj;
-    const url = '/userbase';
-
+    const url = 'http://localhost:3002/userbase';
+    // const url = '/userbase';
 const options = {
     method: "POST",
     headers: {
