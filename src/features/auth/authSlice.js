@@ -5,7 +5,7 @@ import { createSlice } from '@reduxjs/toolkit'
 export const authSlice = createSlice({
   name: 'section',
   initialState: {
-    authStatus: true,
+    authStatus: false,
   },
   reducers: {
     changeAuthStatus: (state, action) => {
