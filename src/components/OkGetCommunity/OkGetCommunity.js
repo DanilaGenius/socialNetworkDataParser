@@ -6,10 +6,15 @@
         import okGroupParsing from '../../modules/ok/okGroupParsing/okGroupParsing.js'
         import translit from '../../utils/translit.js'
         import collectFilters from '../../utils/collectFilters.js'
-        
+        import { useSelector} from 'react-redux';
 
         export default function OkGetCommunity()  {
-       
+        const okAccessToken = useSelector((state) => state.accountLinking.okAccessToken)
+        const okApplicationID = useSelector((state) => state.accountLinking.okApplicationID)
+        const okApplicationPublicKey = useSelector((state) => state.accountLinking.okApplicationPublicKey)
+        const okSessionSecretKey = useSelector((state) => state.accountLinking.okSessionSecretKey)
+        const okApplicationSecretKey = useSelector((state) => state.accountLinking.okApplicationSecretKey)
+
         const okGetCommunityButtonSave = useRef(null);
         const okGetCommunityButtonStop = useRef(null);
         const okGetCommunityButtonStart = useRef(null);
@@ -28,12 +33,27 @@
             const groupId = okGetCommunityInputLink.current.value
             if (groupId == '' || false) return
             const obj2 = {
-                count:555
+                count: '5',
+                okAccessToken,
+                okApplicationID,
+                okApplicationPublicKey,
+                okSessionSecretKey,
+                okApplicationSecretKey
             }
 
             
             
-            await okGroupParsing(groupId, {...filtersObj, ...obj2})
+            await okGroupParsing(groupId, {...filtersObj, ...obj2}).then(res => {
+                console.log(res)
+
+                // if (res.error instanceof Object) {
+                //     setResultTableData(res)
+                    
+                // } 
+                // else
+                // {setResultTableData(res) }
+                
+            })
                 
             //     if (res.error instanceof Object) {
             //         setResultTableData(res.error)

@@ -3,7 +3,7 @@ const pushObjInUsersBase = require('./functions/pushObjInUsersBase');
 const bkTgGetCommunity = require('./functions/bkTgGetCommunity')
 const bkVkGetCommunity = require('./functions/bkVkGetCommunity')
 const bkYtGetChannel = require('./functions/bkYtGetChannel')
-const bkOkGetCommunity = require('./functions/bkOkGetGroups')
+const bkOkGetGroups = require('./functions/bkOkGetGroups')
 const bkVkGetProfiles = require('./functions/bkVkGetProfiles')
 
 const PORT = process.env.PORT || 3002;
@@ -79,7 +79,6 @@ return res.send(
 });
 
 
-
 app.post('/ytgetchannel', async (req, res) => {
 
    try {
@@ -119,8 +118,8 @@ app.post('/okgetgroups', async (req, res) => {
         groupId,
         options
     } = req.body
-    // let result;
-    // if (storyArr.find(e => e == channelName) !== undefined) {
+    let result;
+    // if (storyArr.find(e => e == groupId) !== undefined) {
     //     console.log('Уже был поиск по ссылке ' + url)
     //     result = resultObj.okgetcommunity
     //     return res.send(
@@ -128,15 +127,14 @@ app.post('/okgetgroups', async (req, res) => {
     // )
     // }
 
-    // result = await bkOkGetGroups(channelName, countEntries)
-    // storyArr.push(channelName)
-    // resultObj.okgetcommunity = result;
-    // return res.send(
-    //     result
-    // )
+    result = await bkOkGetGroups(groupId, options)
+    storyArr.push(groupId)
+    resultObj.okgetcommunity = result;
+    return res.send(
+        result
+    )
     
 })
-
 
 app.post('/vkgetprofiles', async (req, res) => {
 

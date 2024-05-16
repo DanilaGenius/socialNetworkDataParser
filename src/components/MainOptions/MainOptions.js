@@ -16,10 +16,11 @@ export default function MainOptions()  {
         const ytApiKey = useSelector((state) => state.accountLinking.ytApiKey)
         const vkAccessToken = useSelector((state) => state.accountLinking.vkAccessToken)
         const tgAccessToken = useSelector((state) => state.accountLinking.tgAccessToken)
-        const okAccessToken = useSelector((state) => state.accountLinking.okAccessToken)
 
+        const okAccessToken = useSelector((state) => state.accountLinking.okAccessToken)
         const okApplicationID = useSelector((state) => state.accountLinking.okApplicationID)
-        const okApplicationPublicKey = useSelector((state) => state.accountLinking.okApplicationPublicKey)
+        const okApplicationPublicKey = useSelector((state) => state.accountLinking.okApplicationPublicKey) 
+        const okApplicationSecretKey = useSelector((state) => state.accountLinking.okApplicationSecretKey)
         const okSessionSecretKey = useSelector((state) => state.accountLinking.okSessionSecretKey)
         const dispatch = useDispatch()
 
@@ -30,7 +31,7 @@ export default function MainOptions()  {
 
         function handlerClickRequisitesBtn(event) {
                 if (event.target === vkRequisitesBtn.current && event.target.id !== state) {
-setVisibleSaveBtn(true);
+                        setVisibleSaveBtn(true);
                         setVisible(true)
                         setState('vkRequisitesBtn')
 
@@ -93,13 +94,14 @@ setVisibleSaveBtn(true);
                         const okApplicationPublicKey = document.querySelector('#okApplicationPublicKey').value
                         const okAccessToken = document.querySelector('#okAccessToken').value
                         const okSessionSecretKey = document.querySelector('#okSessionSecretKey').value
-  
+                        const okApplicationSecretKey = document.querySelector('#okApplicationSecretKey').value
                         
                         dispatch(changeLinkingState({
                                 okApplicationID: okApplicationID,
                                 okApplicationPublicKey: okApplicationPublicKey,
                                 okAccessToken: okAccessToken,
-                                okSessionSecretKey:okSessionSecretKey
+                                okSessionSecretKey:okSessionSecretKey,
+                                okApplicationSecretKey: okApplicationSecretKey
 
                         }))        
                 }
@@ -167,8 +169,10 @@ setVisibleSaveBtn(true);
                         
                         {state == 'okRequisitesBtn' && <InputValue label="Application id ok:" id="okApplicationID" presentValue={okApplicationID} />}
                         {state == 'okRequisitesBtn' && <InputValue label="Application public key ok:" id="okApplicationPublicKey" presentValue={okApplicationPublicKey} />}
+                        {state == 'okRequisitesBtn' && <InputValue label="Application_secret_key ok:" id="okApplicationSecretKey" presentValue={okApplicationSecretKey} />}
                         {state == 'okRequisitesBtn' && <InputValue label="Вечный access_token:" id="okAccessToken" presentValue={okAccessToken} />}
-                        {state == 'okRequisitesBtn' && <InputValue label="Session_secret_key ok:" id="okSessionSecretKey" presentValue={okSessionSecretKey} />}
+                        {state == 'okRequisitesBtn' && <InputValue label="Session_secret_key ok:" id="okSessionSecretKey" presentValue={okSessionSecretKey} />} 
+                        
 
                         {visibleSaveBtn && <input className="mainOptionsRequisitesWindow_saveBtn" type='submit' value={'Записать'} onClick={handlerClickSaveRequisitesBtn}/>} 
                         <div className='mainOptionsRequisitesWindow_saveTextRes'>{stateSaveTextRes}</div>
