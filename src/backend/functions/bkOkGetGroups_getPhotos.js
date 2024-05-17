@@ -27,7 +27,7 @@ result = await axios.get("https://api.ok.ru/api/photos/getPhotos", {
   });
 
   if ('error_code' in result.data && 'error_msg' in result.data) {
-    return result.data.error_msg;
+    return result.data;
   } else {
     return result.data;
   }

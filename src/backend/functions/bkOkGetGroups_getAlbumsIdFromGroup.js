@@ -26,7 +26,7 @@ async function bkOkGetGroups_getAlbumsIdFromGroup(
 	  });
 
   if ('error_code' in res.data && 'error_msg' in res.data) {
-    return res.data.error_msg;
+    return res.data;
   } else {
 	let arrIds = []
     res.data.albums.forEach(e => {
