@@ -19,11 +19,11 @@ export default function SubsectionsYt()  {
                 id="yt-channel" >
                     Получить данные канала
                 </div>
-                {/* <div  className={`subsections_elems-elem ${(subsectionName == 'yt-search') ? 'subsections_elems-elem-active' : ''}`}
+                <div  className={`subsections_elems-elem ${(subsectionName == 'yt-search') ? 'subsections_elems-elem-active' : ''}`}
                 onClick={() => clickOnSubsection('yt-search')}
                 id="yt-search">
                     Поиск по ключ. словам
-                </div>  */}
+                </div> 
             </div>
             )
      

@@ -24,11 +24,11 @@ export default function SubsectionsVk()  {
                 id="vk-communities">
                     Получить сообщества
                 </div>
-                {/* <div  className={`subsections_elems-elem ${(subsectionName == 'vk-search') ? 'subsections_elems-elem-active' : ''}`} 
+                <div  className={`subsections_elems-elem ${(subsectionName == 'vk-search') ? 'subsections_elems-elem-active' : ''}`} 
                 onClick={() => clickOnSubsection('vk-search')}
                 id="vk-search">
                     Поиск по ключ. словам
-                </div>  */}
+                </div> 
             </div>   
         
         )

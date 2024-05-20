@@ -3,17 +3,17 @@
 
 
   
-.okGetProfiles {
+.ytSeachKeys {
     width: 100%;
 }
 
-.okGetProfiles_inputs {
+.ytSeachKeys_inputs {
     display: flex;
     flex-direction: column;
     margin-bottom: 10px;
 }
 
-.okGetProfiles_inputs-input {
+.ytSeachKeys_inputs-input {
     background: #BFBFBF;
     color: #989898;
     height: 50px;
@@ -22,7 +22,7 @@
     color: #FFFFFFFF;
 }
 
-.okGetProfiles_filters {
+.ytSeachKeys_filters {
     width: 100%;
     display: grid;
     grid-template-columns: 200px 200px 200px 200px ;
@@ -31,15 +31,15 @@
 }
 
 
-.okGetProfiles_btns {
+.ytSeachKeys_btns {
     display: flex;
     justify-content: end;
     width: 100%;
 
 }
-.okGetProfiles_btns-btn:nth-last-child(1) {
+.ytSeachKeys_btns-btn:nth-last-child(1) {
     margin-right: 0;
 }
-.okGetProfiles_btns-btn {
+.ytSeachKeys_btns-btn {
     margin-right: 10px;
 }

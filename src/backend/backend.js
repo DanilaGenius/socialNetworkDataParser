@@ -4,7 +4,10 @@ const bkTgGetCommunity = require('./functions/bkTgGetCommunity')
 const bkVkGetCommunity = require('./functions/bkVkGetCommunity')
 const bkYtGetChannel = require('./functions/bkYtGetChannel')
 const bkOkGetGroups = require('./functions/bkOkGetGroups')
+const bkOkGetProfiles = require('./functions/bkOkGetProfiles')
 const bkVkGetProfiles = require('./functions/bkVkGetProfiles')
+const vkSearch = require('./functions/vkSearch')
+const ytSearch = require('./functions/ytSearch')
 
 const PORT = process.env.PORT || 3002;
 let userBase = require(`${__dirname}/../dataBases/userBase.json`)
@@ -77,7 +80,6 @@ return res.send(
 )
 
 });
-
 
 app.post('/ytgetchannel', async (req, res) => {
 
@@ -185,6 +187,84 @@ app.post('/vkgetcommunity', async (req, res) => {
 
     return res.send(
         result.data
+    )
+    
+})
+
+
+app.post('/okgetprofiles', async (req, res) => {
+
+    const {
+        profilesId,
+        options
+    } = req.body
+    let result;
+    console.log( profilesId, options)
+    // if (storyArr.find(e => e == profilesId) !== undefined) {
+    //     console.log('Уже был поиск по ссылке ' + url)
+    //     result = resultObj.okgetcommunity
+    //     return res.send(
+    //     result
+    // )
+    // }
+    // console.log(profilesId, options)
+    result = await bkOkGetProfiles(profilesId, options)
+    storyArr.push(profilesId)
+    resultObj.okgetcommunity = result;
+    return res.send(
+        result
+    )
+    
+})
+
+
+app.post('/vkSearch', async (req, res) => {
+
+    const {
+        keys,
+        options
+    } = req.body
+    let result;
+    
+    // if (storyArr.find(e => e == groupId) !== undefined) {
+    //     console.log('Уже был поиск по ссылке ' + url)
+    //     result = resultObj.okgetcommunity
+    //     return res.send(
+    //     result
+    // )
+    // }
+ 
+    result = await vkSearch(keys, options)
+    storyArr.push(keys)
+    resultObj.okgetcommunity = result;
+    return res.send(
+        result
+    )
+    
+})
+
+//!ДОДЕЛАТЬ
+app.post('/ytSearch', async (req, res) => {
+
+    const {
+        keys,
+        options
+    } = req.body
+    let result;
+    
+    // if (storyArr.find(e => e == groupId) !== undefined) {
+    //     console.log('Уже был поиск по ссылке ' + url)
+    //     result = resultObj.okgetcommunity
+    //     return res.send(
+    //     result
+    // )
+    // }
+
+    result = await ytSearch(keys, options)
+    storyArr.push(keys)
+    resultObj.okgetcommunity = result;
+    return res.send(
+        result
     )
     
 })

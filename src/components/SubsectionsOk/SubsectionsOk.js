@@ -14,11 +14,11 @@ export default function SubsectionsOk()  {
         return (             
                    
             <div >
-                {/* <div  className={`subsections_elems-elem ${(subsectionName == 'ok-profiles') ? 'subsections_elems-elem-active' : ''}`} 
+                <div  className={`subsections_elems-elem ${(subsectionName == 'ok-profiles') ? 'subsections_elems-elem-active' : ''}`} 
                  onClick={() => clickOnSubsection('ok-profiles')}
                 id="ok-profiles">
                     Получить  пользователей
-                </div> */}
+                </div>
                 <div  className={`subsections_elems-elem ${(subsectionName == 'ok-communities') ? 'subsections_elems-elem-active' : ''}`} 
                  onClick={() => clickOnSubsection('ok-communities')}
                 id="ok-communities"> 

@@ -1,9 +1,9 @@
-export default async function vkSearch(keys, options = {}) {
+export default async function ytSearch(keys, options = {}) {
 
     
 	// const channelName = channelName;
 	// const url = 'http://localhost:3002/vkgetcommunity';
-	const url = '/vkSearch';
+	const url = '/ytSearch';
 	let result;
 	const requestOptions = {
 		method: "POST",
@@ -22,5 +22,4 @@ export default async function vkSearch(keys, options = {}) {
     
 	return result
 	
-
 }

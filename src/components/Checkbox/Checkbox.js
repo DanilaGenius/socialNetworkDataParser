@@ -11,7 +11,7 @@ export default function Checkbox(props)  {
         return (             
         <div className="checkbox" key={index}>
             
-            {textLabel == 'Получить информацию' ? 
+            {textLabel == 'Получить информацию' || textLabel == 'Информация о странице' || textLabel == 'Поиск по видео' || textLabel == 'Люди' ? 
             <input className="checkbox-input" 
                 type="checkbox"
                 id={id}  checked
